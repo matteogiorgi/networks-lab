@@ -11,3 +11,40 @@
 - [assegnamento 09 - nio echo server](https://elearning.di.unipi.it/mod/assign/view.php?id=15595)
 - [assegnamento 10 - java pinger](https://elearning.di.unipi.it/mod/assign/view.php?id=15739)
 - [assegnamento 11 - time server](https://elearning.di.unipi.it/mod/assign/view.php?id=15761)
+
+
+## Programma
+
+- Implements Runnable
+- Extends Thread
+- Thread Pool
+    - Fixed Thread Pool
+    - Cached Thread Pool
+- Input/Output
+    - Java Blocking Queue
+- Callable
+- Meccanismo Produttore/Consumatore
+    - Monitor
+    - Monitor vs Lock
+- Concurrent Collections
+    - ArrayList
+    - LinkedList
+    - Iterators e HashMap
+    - HashMap
+- InetAddress
+    - Factory methods
+    - Instance methods
+    - Spam checker
+- Paradigma client/server
+- Stream Sockets
+    - Volatile e Atomic
+- Serializzazione: JSON e native serailizzation
+    - JSON
+    - GSON (Google GSON)
+    - Serializzazione Java
+- Java NIO
+    - Buffers
+    - Channels
+    - Channel Multiplexing
+- UDP DatagramPacket e DatagramSocket
+    - Multicasting
