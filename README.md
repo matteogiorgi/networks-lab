@@ -1,4 +1,4 @@
-# Roba di [laboratorio Reti](https://elearning.di.unipi.it/course/view.php?id=311)
+# Materiale [laboratorio 3](https://elearning.di.unipi.it/course/view.php?id=311)
 
 - [assegnamento 01 - threadpool e files](https://elearning.di.unipi.it/mod/assign/view.php?id=14725)
 - [assegnamento 02 - ufficio postale](https://elearning.di.unipi.it/mod/assign/view.php?id=14893)
