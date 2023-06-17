@@ -1,0 +1,53 @@
+[
+    {
+        "owner": "pippo",
+        "records": [
+            {
+                "date": "2022 01 10",
+                "reason": "BONIFICO"
+            },
+            {
+                "date": "2022 06 18",
+                "reason": "ACCREDITO"
+            },
+            {
+                "date": "2022 09 26",
+                "reason": "BOLLETTINO"
+            }
+        ]
+    },
+    {
+        "owner": "pluto",
+        "records": [
+            {
+                "date": "2022 02 20",
+                "reason": "ACCREDITO"
+            },
+            {
+                "date": "2022 05 14",
+                "reason": "ACCREDITO"
+            },
+            {
+                "date": "2022 10 30",
+                "reason": "PAGOBANCOMAT"
+            }
+        ]
+    },
+    {
+        "owner": "paperino",
+        "records": [
+            {
+                "date": "2022 03 12",
+                "reason": "BONIFICO"
+            },
+            {
+                "date": "2022 07 24",
+                "reason": "BOLLETTINO"
+            },
+            {
+                "date": "2022 08 15",
+                "reason": "BOLLETTINO"
+            }
+        ]
+    }
+]
