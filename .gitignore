@@ -1,47 +1,60 @@
-/pandoc/*
+/notevi/*
+/.vscode/*
+/tags*
 
 /a01/*
 !/a01/src
 !/a01/README.md
+/a01/src/tags
 
 /a02/*
 !/a02/src
 !/a02/README.md
+/a02/src/tags
 
 /a03/*
 !/a03/src
 !/a03/README.md
+/a03/src/tags
 
 /a04/*
 !/a04/src
 !/a04/README.md
+/a04/src/tags
 
 /a05/*
 !/a05/src
 !/a05/README.md
+/a05/src/tags
 
 /a06/*
 !/a06/src
 !/a06/README.md
+/a06/src/tags
 
 /a07/*
 !/a07/src
 !/a07/README.md
 !/a07/conti.json
 !/a07/gson-2.10.jar
+/a07/src/tags
 
 /a08/*
 !/a08/src
 !/a08/README.md
+/a08/src/tags
 
 /a09/*
 !/a09/src
 !/a09/README.md
+/a09/src/tags
 
 /a10/*
 !/a10/src
 !/a10/README.md
+/a10/src/tags
 
 /a11/*
 !/a11/src
 !/a11/README.md
+/a11/src/tags

@@ -11,6 +11,7 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.function.BiConsumer;
@@ -26,26 +27,11 @@ public class MainClass
     {
         // Inizializzo una Map con le coppie chiave valore di
         // tutte le possibili causali usando una anonymus subclass
-        Map<String,Integer> contatoreGlobale = new HashMap<>() {{
-            put("BONIFICO", 0);
-            put("ACCREDITO", 0);
-            put("BOLLETTINO", 0);
-            put("F24", 0);
-            put("PAGOBANCOMAT", 0);
-        }};
+        Map<String,Integer> contatoreGlobale = new ConcurrentHashMap<>();
 
         // Funzione che aggiorna il contatore gloabale
         // da passare ai singoli lettori
-        BiConsumer<String,Integer> aggiornaContatoreGlobale = (key, val) -> {
-            synchronized (contatoreGlobale) {
-                if (contatoreGlobale.containsKey(key)) {
-                    Integer oldVal = contatoreGlobale.get(key);
-                    contatoreGlobale.put(key, oldVal+val);
-                } else {
-                    contatoreGlobale.put(key, val);
-                }
-            }
-        };
+        // BiConsumer<String,Integer> aggiornaContatoreGlobale = (key, val) -> contatoreGlobale.merge(key, val, Integer::sum);
 
         // Dichiaro un ExecutorService per lanciare i lettori
         // e il SingletonOperator per sincronizzare i threads
@@ -73,7 +59,7 @@ public class MainClass
                 }
                 jr.endArray();
                 jr.endObject();
-                executor.execute(new Lettore(conto, aggiornaContatoreGlobale));
+                executor.execute(new Lettore(conto, (k, v) -> contatoreGlobale.merge(k, v, Integer::sum)));
                 singleton.flick(o -> o.ifPresent(i -> --i));
             }
             jr.endArray();

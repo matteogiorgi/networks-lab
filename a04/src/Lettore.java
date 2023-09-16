@@ -1,5 +1,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -32,19 +35,19 @@ public class Lettore implements Runnable
         // e lo leggo solo se esiste e non è una directory
         File fileDaLeggere = new File(pathList.poll());
         if (fileDaLeggere.isFile()) {
-            // scansiono parola per parola, la trasformo in un array
-            // di caratteri e aggiorno le occorrenze per ciascun carattere
-            try (Scanner scanner = new Scanner(fileDaLeggere)) {
-                while (scanner.hasNext()) {
-                    String temp = scanner.next();
-                    char[] temparr = temp.toCharArray();
-                    // aggiorno l'occorrenza del carattere solo se una
-                    // lettera (maiuscola o minuscola) dell'algabeto GB
-                    for (char ch: temparr)
-                        if (String.valueOf(ch).matches("^[a-zA-Z]*$"))
+            // leggo il file carattere per carattere, aggiornando le occorrenze
+            try (Reader reader = new FileReader(fileDaLeggere)) {
+                char[] buffer = new char[1024];
+                int numCharsRead;
+                while ((numCharsRead = reader.read(buffer)) != -1) {
+                    for (int i = 0; i < numCharsRead; i++) {
+                        char ch = buffer[i];
+                        if (String.valueOf(ch).matches("^[a-zA-Z]*$")) {
                             tabella.merge(String.valueOf(ch), 1, Integer::sum);
+                        }
+                    }
                 }
-            } catch (FileNotFoundException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
